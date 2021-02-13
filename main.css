@@ -6,6 +6,13 @@
     margin: 50px;
 }
 
+#block {
+    width: 100px;
+    height: 100px;
+    background: black;
+    margin: 50px;
+}
+
 #second {
     width: 100px;
     height: 100px;
