@@ -1,44 +1,33 @@
 <?php
 
-include "./avto/bmw.php";
-include "./avto/mercedes.php";
+include "./auto/bmw.php";
+include "./auto/mercedes.php";
 
 
 // проверка
-if(isset($_GET['avto'])){
+if(isset($_GET['auto'])){
 
-    switch ($_GET['avto']) {
-        case "bmw":{
-            echo "Пользователь ищет запчасти по BMW";
+    echo "Пользователь выбрал автомобиль: \n\r";  
+    switch ($_GET['auto']) {
+            case "bmw":{
+            // echo "Пользователь ищет запчасти по BMW";
 
-            $newClass = new Bmw("BMW");
-            $newNever = new Bmw();
-            // $newClass ->getName();
-            $newNever ->getName();
+            $newClass = new Bmw("bmw");
+            break;
         }
-
-        break;
-
-
-        case "mercedes":{
-            echo "Пользователь ищет запчасти по mercedes";
-
-
+            case "mercedes":{  
+            $newClass = new Mercedes("Mercedes");
         }
-
-        break;
-
-        case "mercedes":{
-            echo "Пользователь ищет запчасти по mercedes";
-
-
+            break;
+            case "audi":{
+            echo "Пользователь ищет запчасти по audi";
         }
-
-        break;
-
-
-
-
-
+            break;
+    
     }
+
+    $nameAuto = $newClass -> getName();
+    //какая-то логика
+    echo $nameAuto;
+
 }
