@@ -1,13 +1,13 @@
 <?php
 
-
+include_once "driver.php";
 
 /** класс для работы с авто Mercedes
 *
 */
-class Mercedes
+class Mercedes extends driver 
+
 {
-    private $name;
 
     public function __construct($name = "Название не указано")
     {
@@ -15,15 +15,5 @@ class Mercedes
     }
 
 
-    /**
-     * Доступен везде и всем. 
-     * Метод для получения названия авто.
-     * @return string - название авто (что возвращать)
-     */
-    public function getName()
-    {
-        return $this->name;
-    }  
-   
 
 }
