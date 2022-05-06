@@ -394,9 +394,7 @@ right: 0;
 	max-width: 555px;
 	width: 100%;
 }
-.form__box-right .default-btn{
-	top: -15px;
-}
+
 .form__box-inner label,
 .form__box-inner Input,
 .form__box-inner textarea{
