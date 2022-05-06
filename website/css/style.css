@@ -176,7 +176,7 @@ margin: 0 auto;
 	position: relative;
 }
 
-.slick-btn{
+.slick-btn{   
 	position: absolute;
 	top: 70%;
 	z-index: 3;
@@ -267,7 +267,7 @@ top: 11px;
 
 .services__text,
 .form__text,
-.news_text{
+.news__text{
 	letter-spacing: 0.1px;
 }
 .services__btn a,
@@ -361,7 +361,7 @@ right: 0;
 	color: #d3d2d2;
 
 }
-.about__btn default-btn:after{
+.about__btn .default-btn:after{
 	color: #000;
 }
 .form{
