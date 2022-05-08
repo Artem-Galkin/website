@@ -267,7 +267,7 @@ top: 11px;
 
 .services__text,
 .form__text,
-.news__text{
+.news_text{
 	letter-spacing: 0.1px;
 }
 .services__btn a,
@@ -716,4 +716,5 @@ width: 100%;
 .header__btn-menu{
 	display: none;
 	font-size: 28px;
+	
 }
