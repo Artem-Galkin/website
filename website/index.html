@@ -29,7 +29,7 @@
 <body>
 	<header class="header">
 		<div class="header__top">
-			<div class="container">
+			<div id="Главное" class="container">
 				<div class="header__contacts">
 					<a class="header__phone" href="tel:+79671005030">+7 (967) 100 50 30</a>
 					<a class="header__email" href="#">info@gtd.market</a>
@@ -53,10 +53,13 @@
 							<span class="icon-bars"></span>
 						</div>
 						<ul>
-							<li><a href="#">Главное</a></li>
-							<li><a href="#">О компании</a></li>
-							<li><a href="#">Услуги</a></li>
-							<li><a href="#">Контакты</a></li>
+							<li><a href="#Главное">Главное</a></li>
+							<li><a href="#Услуги">Услуги</a></li>
+							<li><a href="#О компании">О компании</a></li>
+							<li><a href="#Контакты">Контакты</a></li>
+							<li><a href="#Аутсорсинг ВЭД">Аутсорсинг ВЭД</a></li>
+							<li><a href="#Новости">Новости</a></li>
+							<li><a href="#Контакты">Контакты</a></li>
 						</ul>
 
 					</nav>
@@ -109,16 +112,15 @@
 				<div class="slider__item">
 					<div class="slider__item-content">
 						<div class="slider__title">
-							УСЛУГИ, СВЯЗАННЫЕ С ПРАВАМИ ДЕКЛАРАНТА
+							АУТСОРСИНГ ВЭД
 						</div>
 
 						<div class="slider__text">
-							Квалифицированные специалисты производят таможенное оформление грузов от имени нашей
-							компании, представляя Ваши интересы на территории Российской Федерации во всех таможенных
+							УСЛУГИ, СВЯЗАННЫЕ С ПРАВАМИ ДЕКЛАРАНТА.
 							органах.
 						</div>
 						<div class="slider__btn default-btn">
-							Оформить заявку на дополнительные услуги
+							Оформить заявку на услуги ВЭД
 						</div>
 					</div>
 				</div>
@@ -131,7 +133,7 @@
 		<div class="container">
 			<div class="services__top">
 				<div class="services__title-box">
-					<div class="services__title">
+					<div id="Услуги" class="services__title">
 						Наши услуги
 					</div>
 					<div class="services__text">
@@ -152,7 +154,7 @@
 
 					<img src="img/services-1.png" alt="">
 					<div class="services__item-title">
-						Таможенное оформление
+						Комплексное таможенное <br> оформление
 					</div>
 					<div class="services__item-text">
 						Оказываем полный комплекс услуг по таможенному оформлению товаров для различных сфер
@@ -171,7 +173,7 @@
 				<div class="services__item">
 					<img src="img/services-2.png" alt="">
 					<div class="services__item-title">
-						Международная и региональнаялогистика
+						Международная и региональная логистика
 					</div>
 					<div class="services__item-text">
 						Оказываем полный комплекс транспортно-логистических услуг, предлагая своим клиентам
@@ -191,11 +193,12 @@
 				<div class="services__item">
 					<img src="img/services-3.png" alt="">
 					<div class="services__item-title">
-						Услуги, связанные с правами <br> декларанта
+						Аутсорсинг ВЭД
 					</div>
 
 					<div class="services__item-text">
-						Мы идем в ногу со временем, поэтому используем современные методы декларирования и
+						Услуги, связанные с правами <br> декларанта. Мы идем в ногу со временем, поэтому используем современные
+						методы декларирования и
 						различные IT-решения при подготовке документов, что существенно сокращает время,
 						необходимое для совершения процедуры таможенного оформления и создает дополнительные
 						конкурентные преимущества для наших клиентов.
@@ -214,7 +217,7 @@
 	<section class="about">
 		<div class="container">
 			<div class="about__inner">
-				<div class="about__title">О компании
+				<div id="О компании" class="about__title">О компании
 
 				</div>
 
@@ -231,18 +234,15 @@
 	</section>
 
 	<section class="form">
-		<div class="container">
+		<div id="Аутсорсинг ВЭД" class="container">
 			<div class="form__inner">
 				<div class="form__content">
 					<div class="form__title-box">
 						<div class="form__title">
-							Получить стоимость услуг за таможенное оформление
+							Аутсорсинг ВЭД
 						</div>
 						<div class="form__text">
-							Компания ГТД Маркет предлагает своим клиентам полный комплекс логистических услуг.
-							Квалифицированные специалисты производят таможенное оформление грузов от имени нашей
-							компании,
-							представляя Ваши интересы на территории Российской Федерации во всех таможенных органах.
+							Расчитать размер таможенных платежей и уточнить о мерах по применению разрешительных документов
 						</div>
 
 					</div>
@@ -300,7 +300,7 @@
 										Сообщение
 										<textarea></textarea>
 									</label>
-									<button class="default-btn" type="submit">Получить консультацию</button>
+									<button class="default-btn" type="submit">Получить размер таможенных платежей</button>
 								</div>
 							</div>
 						</form>
@@ -349,7 +349,7 @@
 	</section>
 
 
-	<section class="news">
+	<section id="Новости" class="news">
 		<div class="container">
 
 			<div class="news__top">
@@ -365,110 +365,110 @@
 				</div>
 
 				<div class="news__btn">
-					<a href="#"">
-                    Открыть все новости
-                    </a>
-          </div>
-      </div>
-			
+					<a href="#">
+						Открыть все новости
+					</a>
+				</div>
+			</div>
+
 
 
 			<div class=" news__inner">
 
-						<div class="news__slider">
-							<div class="news__slider-inner">
+				<div class="news__slider">
+					<div class="news__slider-inner">
 
-								<div class="news__slider-item">
-									<div class="news__slider-title">
-										Брифинг официального представителя ЕЭК
-									</div>
-									<div class="news__slider-text">
-										Официальный представитель Евразийской экономической комиссии Ия Малкина
-										выступила перед журналистами. Она рассказала о подготовке Евразийского
-										экономического форума и ответила на вопросы об экономической ситуации в ЕАЭС в
-										условиях санкционного давления и принимаемых мерах по импортозамещению.
-									</div>
-									<div class="news__slider-author">
-										Пресс-служба ЕЭК
-									</div>
-								</div>
-
-								<div class="news__slider-item">
-									<div class="news__slider-title">
-										Брифинг официального представителя ЕЭК
-									</div>
-									<div class="news__slider-text">
-										Официальный представитель Евразийской экономической комиссии Ия Малкина
-										выступила перед журналистами. Она рассказала о подготовке Евразийского
-										экономического форума и ответила на вопросы об экономической ситуации в ЕАЭС в
-										условиях санкционного давления и принимаемых мерах по импортозамещению.
-									</div>
-									<div class="news__slider-author">
-										Пресс-служба ЕЭК
-									</div>
-								</div>
-
-								<div class="news__slider-item">
-									<div class="news__slider-title">
-										Брифинг официального представителя ЕЭК
-									</div>
-									<div class="news__slider-text">
-										Официальный представитель Евразийской экономической комиссии Ия Малкина
-										выступила перед журналистами. Она рассказала о подготовке Евразийского
-										экономического форума и ответила на вопросы об экономической ситуации в ЕАЭС в
-										условиях санкционного давления и принимаемых мерах по импортозамещению.
-									</div>
-									<div class="news__slider-author">
-										Пресс-служба ЕЭК
-									</div>
-								</div>
-
+						<div class="news__slider-item">
+							<div class="news__slider-title">
+								Брифинг официального представителя ЕЭК
 							</div>
-
+							<div class="news__slider-text">
+								Официальный представитель Евразийской экономической комиссии Ия Малкина
+								выступила перед журналистами. Она рассказала о подготовке Евразийского
+								экономического форума и ответила на вопросы об экономической ситуации в ЕАЭС в
+								условиях санкционного давления и принимаемых мерах по импортозамещению.
+							</div>
+							<div class="news__slider-author">
+								Пресс-служба ЕЭК
+							</div>
 						</div>
 
-
-
-
-
-
-
-
-
-						<a href="#" class="news__blog">
-							<div class="news__images">
-								<img src="img/news-1.jpg" alt="">
-								<div class="news__date">01.05</div>
+						<div class="news__slider-item">
+							<div class="news__slider-title">
+								Брифинг официального представителя ЕЭК
 							</div>
-							<div class="news__blog-title">
-								Новость компании
+							<div class="news__slider-text">
+								Официальный представитель Евразийской экономической комиссии Ия Малкина
+								выступила перед журналистами. Она рассказала о подготовке Евразийского
+								экономического форума и ответила на вопросы об экономической ситуации в ЕАЭС в
+								условиях санкционного давления и принимаемых мерах по импортозамещению.
 							</div>
-							<div class="news_blog-text">
-								На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов,
-								имеющих компетенции в таможенном оформлении и логистике
+							<div class="news__slider-author">
+								Пресс-служба ЕЭК
 							</div>
-						</a>
+						</div>
 
-						<a href="#" class="news__blog">
-							<div class="news__images">
-								<img src="img/news-2.jpg" alt="">
-								<div class="news__date">10.05</div>
+						<div class="news__slider-item">
+							<div class="news__slider-title">
+								Брифинг официального представителя ЕЭК
 							</div>
-							<div class="news__blog-title">
-								Новость компании
+							<div class="news__slider-text">
+								Официальный представитель Евразийской экономической комиссии Ия Малкина
+								выступила перед журналистами. Она рассказала о подготовке Евразийского
+								экономического форума и ответила на вопросы об экономической ситуации в ЕАЭС в
+								условиях санкционного давления и принимаемых мерах по импортозамещению.
 							</div>
-							<div class="news_blog-text">
-								На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов,
-								имеющих компетенции в таможенном оформлении и логистике
+							<div class="news__slider-author">
+								Пресс-служба ЕЭК
 							</div>
-						</a>
+						</div>
 
-
-
+					</div>
 
 				</div>
 
+
+
+
+
+
+
+
+
+				<a href="#" class="news__blog">
+					<div class="news__images">
+						<img src="img/news-1.jpg" alt="">
+						<div class="news__date">01.05</div>
+					</div>
+					<div class="news__blog-title">
+						Новость компании
+					</div>
+					<div class="news_blog-text">
+						На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов,
+						имеющих компетенции в таможенном оформлении и логистике
+					</div>
+				</a>
+
+				<a href="#" class="news__blog">
+					<div class="news__images">
+						<img src="img/news-2.jpg" alt="">
+						<div class="news__date">10.05</div>
+					</div>
+					<div class="news__blog-title">
+						Новость компании
+					</div>
+					<div class="news_blog-text">
+						На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов,
+						имеющих компетенции в таможенном оформлении и логистике
+					</div>
+				</a>
+
+
+
+
 			</div>
+
+		</div>
 
 	</section>
 
@@ -496,7 +496,7 @@
 							консультация</a>
 
 
-						<ul class="footer__list">
+						<ul id="Контакты" class="footer__list">
 							<li><a class="footer__phone" href="tel:+79671005030">+7 (967) 100 50 30</a></li>
 							<li><a href="#">info.gtd@market</a></li>
 							<li><a class="footer__adress" href="#">Москва, ул.Бутлерова 17, бизнес-центр «NEO GEO», офис. 3881</a>
@@ -541,6 +541,21 @@
 			<input type="submit" value="Отправить">
 		</form>
 	</div>
+
+
+
+
+
+
+	<!-- Yandex.Metrika counter -->
+	<script
+		type="text/javascript"> (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) }; m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a) })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(88737760, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true, ecommerce: "dataLayer" }); </script>
+	<noscript>
+		<div><img src="https://mc.yandex.ru/watch/88737760" style="position:absolute; left:-9999px;" alt="" /></div>
+	</noscript> <!-- /Yandex.Metrika counter -->
+
+
+
 
 
 

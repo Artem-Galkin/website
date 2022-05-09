@@ -234,7 +234,7 @@ background-color: transparent;
 .services__title-box,
 .form__title-box,
 .news__title-box{
-	max-width: 700px;
+	max-width: 520px;
 	padding-left: 140px;
 	position: relative;
 
@@ -716,5 +716,5 @@ width: 100%;
 .header__btn-menu{
 	display: none;
 	font-size: 28px;
-	
+	margin-bottom: 20px;
 }
