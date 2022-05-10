@@ -716,5 +716,92 @@ width: 100%;
 .header__btn-menu{
 	display: none;
 	font-size: 28px;
+	top: 150px;
+}
+
+
+#modal1 {
+	width: 300px;
+}
+
+#modal1 input{
+	display: block;
+	width: 100%;
 	margin-bottom: 20px;
+	outline: none;
+	height: 40px;
+	border: 1px solid #e6e6e6;
+	padding: 0px 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+#modal1 input[type="submit"]{
+	background-color: #ffc222;
+	border: none;
+}
+
+
+#modal2 {
+	width: 300px;
+}
+
+#modal2 input{
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	outline: none;
+	height: 40px;
+	border: 1px solid #e6e6e6;
+	padding: 0px 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+#modal2 input[type="submit"]{
+	background-color: #ffc222;
+	border: none;
+}
+
+#modal3 {
+	width: 300px;
+}
+
+#modal3 input{
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	outline: none;
+	height: 40px;
+	border: 1px solid #e6e6e6;
+	padding: 0px 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+#modal3 input[type="submit"]{
+	background-color: #ffc222;
+	border: none;
+}
+
+
+#modal4 {
+	width: 300px;
+}
+
+#modal4 input{
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	outline: none;
+	height: 40px;
+	border: 1px solid #e6e6e6;
+	padding: 0px 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+#modal4 input[type="submit"]{
+	background-color: #ffc222;
+	border: none;
 }
