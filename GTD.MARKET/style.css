@@ -35,4 +35,29 @@ button.button:focus {
   font-size: 20px;
 }
 
+/*ColorTemplate*/
+.color-primary {
+  color: #003859;
+}
+
+.color-primary-bg {
+  background: #003859;
+}
+
+.color-second {
+  color: #00a5c4;
+}
+
+.color-second-bg {
+  background: #00a5c4;
+}
+
+.color-yellow {
+  color: #ffc222;
+}
+
+.color-yellow-bg {
+  background: #ffc222;
+}
+
 /*# sourceMappingURL=style.css.map */
