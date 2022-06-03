@@ -1,0 +1,47 @@
+<!-- https://www.youtube.com/watch?v=GAe2nZpI39c -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контактная форма</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@600&family=Poppins&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+
+<body>
+  <div class="container">
+    <h1>Спасибо что связались с нами. Мы свяжемся с вами, как только возможн</h1>
+    <p class="back">Вернуться в начало <a href="index.html"></a> </p>
+
+    <form action="mail.php" metod="Post">
+
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name">
+
+      <label for="email">email</label>
+      <input type="email" name="email" id="email">
+
+      <label for="Subject">Subject</label>
+      <input type="text" name="Subject" id="Subject">
+
+      <label for="message">Message</label>
+      <textarea name="message" cols="30" rows="10"></textarea>
+      <input type="submit" value="send">
+
+    </form>
+
+  </div>
+</body>
+
+</html>
