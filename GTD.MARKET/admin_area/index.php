@@ -70,7 +70,7 @@
 
         <!-- button*10>a.nav-link.text-light.bg-info.me-1 -->
         <div class="button text-center">
-          <button class="my-3"><a href="" class="nav-link text-light 
+          <button class="my-3"><a href="insert_product.php" class="nav-link text-light 
         bg-info my-1">Insert Products</a></button>
           <button class="my-3"><a href="" class="nav-link text-light 
         bg-info my-1">View Products</a></button>
