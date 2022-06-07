@@ -1,9 +1,10 @@
+<!-- 2) Подключаем к базе данных, проверяем подключение - при запросе должно выдавать "" -->
 <?php
-include('./includes/connect.php');
+include('../includes/connect.php');
 if (isset($_POST['insert_cat'])) {
   $category_title = $_POST['cat_title'];
 
-  // select data from database
+  // select data from data base
   $select_query = "Select*from `categories` where category_title='$category_title'";
   $result_select = mysqli_query($con, $select_query);
   $number = mysqli_num_rows($result_select);
@@ -17,13 +18,14 @@ if (isset($_POST['insert_cat'])) {
       echo "<script>alert('Category has been insered successfully')</script>";
     }
   }
-};
+}
 ?>
+
 
 <form action="" method="post" class="mb-2">
   <div class="input-group w-90 mb-2">
     <span class="input-group-text bg-info" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
-    <input type="text" class="form-control" name="cat_title" placeholder="Insert categories" aria-label="Categories" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="cat_title" placeholder="Insert categories" aria-label="Categories" aria-describedby="basic-addon1" class="bg-info">
   </div>
   <div class="input-group w-10 mb-2 m-auto">
 

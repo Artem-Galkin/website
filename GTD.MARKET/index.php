@@ -91,7 +91,7 @@
 
           <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="./images/3.png" class="card-img-top" alt="...">
+              <img src="./images/6.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -128,7 +128,7 @@
 
           <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="./images/7.png" class="card-img-top" alt="...">
+              <img src="./images/5.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -141,7 +141,7 @@
 
           <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="./images/3.png" class="card-img-top" alt="...">
+              <img src="./images/4.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -154,7 +154,7 @@
 
           <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="./images/7.png" class="card-img-top" alt="...">
+              <img src="./images/9.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -177,6 +177,7 @@
               <h4>Delivery Brands</h4>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link text-light">
               <h4>Brand1</h4>
