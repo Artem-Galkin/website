@@ -1,3 +1,11 @@
+<!-- connect file -->
+<?php
+include('includes/connect.php');
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +13,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHP code</title>
+  <title>Ecommerce Website using PHP and MySQL</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- boot strapt CSS link -->
@@ -89,6 +97,9 @@
         <!-- Products -->
         <div class="row">
 
+
+
+
           <div class="col-md-4 mb-2">
             <div class="card">
               <img src="./images/6.png" class="card-img-top" alt="...">
@@ -159,7 +170,7 @@
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#" class="btn btn-info">Add to cart</a>
-
+                <a href="#" class="btn btn-secondary">Vie more</a>
               </div>
             </div>
           </div>
@@ -178,31 +189,20 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Brand1</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Brand2</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Brand3</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Brand4</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Brand5</h4>
-            </a>
-          </li>
+          <?php
+          $select_brands = "Select * from `brands`";
+          $result_brands = mysqli_query($con, $select_brands);
+          // $row_data = mysqli_fetch_assoc($result_brands);
+          // echo $row_data['brand_title'];
+          // echo $row_data['brand_title'];
+          while ($row_data = mysqli_fetch_assoc($result_brands)) {
+            $brand_title = $row_data['brand_title'];
+            $brand_id = $row_data['brand_id'];
+            echo " <li class='nav-item'><a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a></li>"; //чтобы не выдавал ошибки - меняем "" на ''        
+          }
+          ?>
+
+
         </ul>
 
         <ul class="navbar-nav me-auto text-center">
@@ -211,31 +211,36 @@
               <h4>Categories</h4>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Categories</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Categories1</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Categories2</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Categories3</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-light">
-              <h4>Categories4</h4>
-            </a>
-          </li>
+
+          <?php
+          $select_categories = "Select * from `categories`";
+          $result_categories = mysqli_query($con, $select_categories);
+          // $row_data = mysqli_fetch_assoc($result_brands);
+          // echo $row_data['brand_title'];
+          // echo $row_data['brand_title'];
+          while ($row_data = mysqli_fetch_assoc($result_categories)) {
+            $category_title = $row_data['category_title'];
+            $category_id = $row_data['category_id'];
+            echo " <li class='nav-item'><a href='index.php?category=$category_id' class='nav-link text-light'>$category_title</a></li>"; //чтобы не выдавал ошибки - меняем "" на ''        
+          }
+          ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </ul>
 
         <!-- categories to be displayed -->
