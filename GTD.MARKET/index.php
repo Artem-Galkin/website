@@ -190,7 +190,7 @@ include('includes/connect.php');
           </li>
 
           <?php
-          $select_brands = "Select * from `brands`";
+          $select_brands = "SELECT * FROM `brands`";
           $result_brands = mysqli_query($con, $select_brands);
           // $row_data = mysqli_fetch_assoc($result_brands);
           // echo $row_data['brand_title'];
@@ -213,7 +213,7 @@ include('includes/connect.php');
           </li>
 
           <?php
-          $select_categories = "Select * from `categories`";
+          $select_categories = "SELECT * FROM `categories`";
           $result_categories = mysqli_query($con, $select_categories);
           // $row_data = mysqli_fetch_assoc($result_brands);
           // echo $row_data['brand_title'];
