@@ -2,9 +2,8 @@
 <?php
 include('includes/connect.php');
 include('functions/common_function.php');
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +20,12 @@ include('functions/common_function.php');
 
   <!-- font awesome link-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 
 <body>
-
   <!-- navbar -->
   <div class="container-fluid">
-
-
     <!-- first child -->
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container-fluid p-0">
@@ -74,10 +69,6 @@ include('functions/common_function.php');
         <li class="nav-item">
           <a class="nav-link" href="#">Login</a>
         </li>
-
-
-
-
       </ul>
     </nav>
 
@@ -89,27 +80,24 @@ include('functions/common_function.php');
       <p class="text-center">Communication is at the heart of e-commerce and community</p>
     </div>
 
-
     <!-- fourth child -->
 
-    <div class="row">
+    <div class="row px-1">
       <div class="col-md-10">
 
         <!-- Products -->
-        <div class="row px-1">
+        <div class="row">
           <!-- fetching products -->
           <?php
-          // calling function
+          //calling function 
           getproducts();
+          get_unique_categories();
           ?>
-
-
-
-
+          <!-- row end -->
         </div>
-        <!-- row end -->
+        <!-- col end -->
       </div>
-      <!-- col end -->
+
 
       <!-- Sidenav -->
       <div class="col-md-2 bg-secondary p-0">
@@ -124,9 +112,11 @@ include('functions/common_function.php');
           <?php
           getbrands();
           ?>
-
-
         </ul>
+
+
+        <!-- categories to be displayed -->
+
 
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
@@ -138,19 +128,10 @@ include('functions/common_function.php');
           <?php
           getcategories();
           ?>
-
-
-
-
         </ul>
-
-        <!-- categories to be displayed -->
-
-
 
 
       </div>
-
     </div>
   </div>
 
