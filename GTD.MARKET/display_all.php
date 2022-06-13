@@ -100,10 +100,9 @@ include('functions/common_function.php');
       </div>
 
 
-
-
+      <!-- Sidenav -->
       <div class="col-md-2 bg-secondary p-0">
-        <!-- brands to be displayed -->
+        <!-- Brands to be displayed -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
             <a href="#" class="nav-link text-light">
@@ -140,8 +139,10 @@ include('functions/common_function.php');
 
 
   <!-- last child -->
-  <!-- include footer -->
-  <?php include("./includes/footer.php") ?>
+  <div class="bg-info p-3 text-center">
+    <p>All rights reserved - © Template by Artem Galkin. Все права защищены-2022</p>
+  </div>
+
 
   <!-- boot strapt JS link -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

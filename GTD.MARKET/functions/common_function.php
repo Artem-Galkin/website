@@ -10,6 +10,43 @@ function getproducts()
   // condition to check isset or not 
   if (!isset($_GET['category'])) {
     if (!isset($_GET['brand'])) {
+      $select_query = "Select * from `products` order by rand() LIMIT 0,4";
+      $result_query = mysqli_query($con, $select_query);
+      while ($row = mysqli_fetch_assoc($result_query)) {
+        $product_id = $row['product_id'];
+        $product_title = $row['product_title'];
+        $product_description = $row['product_description'];
+        $product_image1 = $row['product_image1'];
+        $product_price = $row['product_price'];
+        $category_id = $row['category_id'];
+        $brand_id = $row['brand_id'];
+        echo "<div class='col-md-4 mb-2'>
+            <div class='card'>
+                    <img src='./admin_area/product_images/$product_image1' 
+                    class='card-img-top' alt='$product_title'>
+                      <div class='card-body'>
+                        <h5 class='card-title'>$product_title</h5>
+                          <p class='card-tex'>$product_description</p>
+                            <a href='#' class='btn btn-info'>Add to cart</a>
+                            <a href='#' class='btn btn-secondary'>Vie more</a>
+                        </div>
+                      </div>
+                    </div>";
+      }
+    }
+  }
+}
+
+
+
+
+//  getting all products
+function get_all_products()
+{
+  global $con;
+  // condition to check isset or not 
+  if (!isset($_GET['category'])) {
+    if (!isset($_GET['brand'])) {
       $select_query = "Select * from `products` order by rand() LIMIT 0,9";
       $result_query = mysqli_query($con, $select_query);
       while ($row = mysqli_fetch_assoc($result_query)) {
@@ -77,13 +114,13 @@ function get_unique_categories()
 }
 
 
-//  getting unique categories
+//  getting unique brands
 function get_unique_brands()
 {
   global $con;
   // condition to check isset or not 
   if (isset($_GET['brand'])) {
-    $brand_id = $_GET['brand_id'];
+    $brand_id = $_GET['brand'];
     $select_query = "Select * from `products` where brand_id=$brand_id";
     $result_query = mysqli_query($con, $select_query);
     $num_of_rows = mysqli_num_rows($result_query);
@@ -113,34 +150,6 @@ function get_unique_brands()
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -179,9 +188,48 @@ function getcategories()
 }
 
 
+//searching products function
 
 
 
+function search_product()
+{
+  global $con;
+  if (isset($_GET['search_data_product'])) {
+    $seach_data_value = $_GET['search_data'];
+    $seach_query = "Select*from `products` where product_keywords like '%search_data_value%'";
+    $result_query = mysqli_query($con, $seach_query);
+    $num_of_rows = mysqli_num_rows($result_query);
+    if ($num_of_rows == 0) {
+      echo "<h2 class='text-center text-danger'>No results match. No products match. No products found on this category!</h2>";
+    }
+    while ($row = mysqli_fetch_assoc($result_query)) {
+      $product_id = $row['product_id'];
+      $product_title = $row['product_title'];
+      $product_description = $row['product_description'];
+      $product_image1 = $row['product_image1'];
+      $product_price = $row['product_price'];
+      $category_id = $row['category_id'];
+      $brand_id = $row['brand_id'];
+      echo "<div class='col-md-4 mb-2'>
+            <div class='card'>
+                    <img src='./admin_area/product_images/$product_image1' 
+                    class='card-img-top' alt='$product_title'>
+                      <div class='card-body'>
+                        <h5 class='card-title'>$product_title</h5>
+                          <p class='card-tex'>$product_description</p>
+                            <a href='#' class='btn btn-info'>Add to cart</a>
+                            <a href='#' class='btn btn-secondary'>Vie more</a>
+                        </div>
+                      </div>
+                    </div>";
+    }
+  }
+}
+
+
+
+// getting products
 
 
 
