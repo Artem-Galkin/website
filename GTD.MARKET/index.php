@@ -92,6 +92,7 @@ include('functions/common_function.php');
           //calling function 
           getproducts();
           get_unique_categories();
+          get_unique_brands();
           ?>
           <!-- row end -->
         </div>
