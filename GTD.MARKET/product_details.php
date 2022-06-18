@@ -125,7 +125,7 @@ include('functions/common_function.php');
           <!-- fetching products -->
           <?php
           //calling function 
-
+          view_datails();
           get_unique_categories();
           get_unique_brands();
           ?>

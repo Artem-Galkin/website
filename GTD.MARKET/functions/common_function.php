@@ -280,6 +280,36 @@ function view_datails()
                       </div>
                     </div>
                     
+
+              <div class='col-md-8'>
+                      <div class='row'>
+                        <div class='col-md-12'>
+                          </h4 class='text-center text-info mb-5'>Relatedproducts
+                           </h4>
+                        <div class='col-md-6'>
+                            <img src='./images/cup2.png' class='card-img-top' alt='$product_title'>
+                        </div>
+                          <div class='col-md-6'>
+                            <img src='./images/cup3.png' class='card-img-top' alt='$product_title'>
+                        </div>
+                         </div>
+                           </div>
+                       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     ";
         }
       }
