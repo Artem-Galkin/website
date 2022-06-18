@@ -133,7 +133,8 @@ function getbrands()
     $brand_title = $row_data['brand_title'];
     $brand_id = $row_data['brand_id'];
     echo " <li class='nav-item'>
-    <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
+    <a href='index.php?brand=$brand_id' class='nav-link 
+    text-light'>$brand_title</a>
     </li>"; //чтобы не выдавал ошибки - меняем ("") на ('')         
   }
 }
@@ -211,9 +212,9 @@ function search_product()
 {
   global $con;
   if (isset($_GET['search_data_product'])) {
-    $seach_data_value = $_GET['search_data'];
-    $seach_query = "Select*from `products` where product_keywords like '%search_data_value%'";   //видео -19-22
-    $result_query = mysqli_query($con, $seach_query);
+    $search_data_value = $_GET['search_data'];
+    $search_query = "Select * from `products` where product_keywords like '%$search_data_value%'";   //видео 21  11:14 минута
+    $result_query = mysqli_query($con, $search_query);
     $num_of_rows = mysqli_num_rows($result_query);
     if ($num_of_rows == 0) {
       echo "<h2 class='text-center text-danger'>No results match. No products match. No products found on this category!</h2>";
