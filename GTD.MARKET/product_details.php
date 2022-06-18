@@ -99,30 +99,33 @@ include('functions/common_function.php');
                 <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
               </div>
             </div>
+          </div>
 
 
-            <div class="col-md-8">
-              <!-- realted images -->
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="col-md-6">
-                    <img src='images/cup2.png' class='card-img-top' alt='$product_title'>
-                  </div>
-                  <div class="col-md-6">
-                    <img src='images/cup3.png' class='card-img-top' alt='$product_title'>
-                  </div>
+          <div class="col-md-8">
+            <!-- realted images -->
+            <div class="row">
+              <div class="col-md-12">
+                </h4 class="text-center text-info mb-5">Relatedproducts
+                </h4>
+                <div class="col-md-6">
+                  <img src='./images/cup2.png' class='card-img-top' alt='$product_title'>
+                </div>
+                <div class="col-md-6">
+                  <img src='./images/cup3.png' class='card-img-top' alt='$product_title'>
                 </div>
               </div>
             </div>
-
           </div>
+
+
 
 
 
           <!-- fetching products -->
           <?php
           //calling function 
-          view_datails();
+
           get_unique_categories();
           get_unique_brands();
           ?>
