@@ -275,7 +275,7 @@ function view_datails()
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
                             <a href='#' class='btn btn-info'>Add to cart</a>
-                            <a href='#' class='btn btn-secondary'>Vie more</a>
+                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
                       </div>
                     </div>
@@ -287,10 +287,10 @@ function view_datails()
                           </h4 class='text-center text-info mb-5'>Relatedproducts
                            </h4>
                         <div class='col-md-6'>
-                            <img src='./images/cup2.png' class='card-img-top' alt='$product_title'>
+                            <img src='./admin_area/product_images/$product_image2' class='card-img-top' alt='$product_title'>
                         </div>
                           <div class='col-md-6'>
-                            <img src='./images/cup3.png' class='card-img-top' alt='$product_title'>
+                            <img src='./admin_area/product_images/$product_image3' class='card-img-top' alt='$product_title'>
                         </div>
                          </div>
                            </div>
