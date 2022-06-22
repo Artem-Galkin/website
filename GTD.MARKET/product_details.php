@@ -104,7 +104,7 @@ include('functions/common_function.php');
 
             <!-- card -->
             <div class='card'>
-              <img src='./images/Apple1.jpg' class='card-img-top' alt='$product_title'>
+              <img src='./admin_area/product_images/Apple1.jpg' class='card-img-top' alt='$product_title'>
               <div class='card-body'>
                 <h5 class='card-title'>$product_title</h5>
                 <p class='card-tex'>$product_description</p>
