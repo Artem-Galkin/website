@@ -3,7 +3,7 @@
 include('./includes/connect.php');
 
 
-// getting products
+// getting products                    решить задачу с воспроизведением 3 фото (Part-22, 9:00-10:00)
 function getproducts()
 {
   global $con;
@@ -21,17 +21,17 @@ function getproducts()
         $category_id = $row['category_id'];
         $brand_id = $row['brand_id'];
         echo "<div class='col-md-4 mb-2'>
-            <div class='card'>
+                  <div class='card'>
                     <img src='./admin_area/product_images/$product_image1' class='card-img-top' 
                     alt='$product_title'>
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
-                            <a href='#' class='btn btn-info'>Add to cart</a>
-                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
-                        </div>
+                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>   
                       </div>
-                    </div>";
+                 </div>
+            </div>";
       }
     }
   }
@@ -67,8 +67,8 @@ function get_unique_categories()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
-                            <a href='#' class='btn btn-info'>Add to cart</a>
-                            <a href='Product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
+                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
                       </div>
                     </div>";
@@ -106,19 +106,14 @@ function get_unique_brands()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
-                            <a href='#' class='btn btn-info'>Add to cart</a>
-                            <a href='Product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
+                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
                       </div>
                     </div>";
     }
   }
 }
-
-
-
-
-
 
 
 
@@ -164,8 +159,8 @@ function get_all_products()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
-                            <a href='#' class='btn btn-info'>Add to cart</a>
-                            <a href='Product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
+                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
                       </div>
                     </div>";
@@ -173,19 +168,6 @@ function get_all_products()
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //  displaying categories in sidenav
@@ -213,7 +195,7 @@ function search_product()
   global $con;
   if (isset($_GET['search_data_product'])) {
     $search_data_value = $_GET['search_data'];
-    $search_query = "Select * from `products` where product_keywords like '%$search_data_value%'";   //видео 21  11:14 минута
+    $search_query = "Select * from `products` where product_keywords like '%$search_data_value%'";   //видео 21  11:14 минута. видео 23   5:32 (отсутсвует фото при выдаче)
     $result_query = mysqli_query($con, $search_query);
     $num_of_rows = mysqli_num_rows($result_query);
     if ($num_of_rows == 0) {
@@ -234,8 +216,8 @@ function search_product()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
-                            <a href='#' class='btn btn-info'>Add to cart</a>
-                            <a href='Product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
+                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
                       </div>
                     </div>";
@@ -268,17 +250,17 @@ function view_datails()
           $category_id = $row['category_id'];
           $brand_id = $row['brand_id'];
           echo "<div class='col-md-4 mb-2'>
-            <div class='card'>
+                  <div class='card'>
                     <img src='./admin_area/product_images/$product_image1' 
                     class='card-img-top' alt='$product_title'>
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
-                            <a href='#' class='btn btn-info'>Add to cart</a>
-                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
-                        </div>
+                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                            <a href='index.php' class='btn btn-secondary'>Go home</a>
                       </div>
-                    </div>
+                  </div>
+                </div>
                     
 
               <div class='col-md-8'>
@@ -286,15 +268,20 @@ function view_datails()
                         <div class='col-md-12'>
                           </h4 class='text-center text-info mb-5'>Relatedproducts
                            </h4>
+                        </div>
+
                         <div class='col-md-6'>
-                            <img src='./admin_area/product_images/$product_image2' class='card-img-top' alt='$product_title'>
+                            <img src='./admin_area/product_images/$product_image2' 
+                            class='card-img-top' alt='$product_title'>
                         </div>
-                          <div class='col-md-6'>
-                            <img src='./admin_area/product_images/$product_image3' class='card-img-top' alt='$product_title'>
+
+                        <div class='col-md-6'>
+                            <img src='./admin_area/product_images/$product_image3' 
+                            class='card-img-top' alt='$product_title'>
                         </div>
-                         </div>
-                           </div>
-                       </div>
+                         
+                      </div>
+              </div>
 
 
 
@@ -326,4 +313,26 @@ function getIPAddress()
 // $ip = getIPAddress();
 // echo 'User Real IP Address - ' . $ip;
 
+// cart function 
+function cart()
+{
+  if (isset($_GET['add_to_cart'])) {
+    global $con;
+    $get_ip_add = getIPAddress();
+    $get_product_id = $_GET['add_to_cart'];
+    $select_query = "Select * from `cart_details` where 
+    ip_adress='$get_ip_add' and product_id=$get_product_id";
+    $result_query = mysqli_query($con, $select_query);
+    $num_of_rows = mysqli_num_rows($result_query);
+    if ($num_of_rows > 0) {
+      echo "<script>alert('This item is already present inside cart')</script>";
+      echo "<script>window.open('index.php','_self')</script>";
+    } else {
+      $insert_query = "insert into `cart_details` (product_id,ip_address, quantity) values ($get_product_id,'$get_ip_add',0)";
+      $result_query = mysqli_query($con, $insert_query);
+      echo "<script>alert('Item is added to cart')</script>";
+      echo "<script>window.open('index.php,'_self')</script>";
+    }
+  }
+}
 ?>

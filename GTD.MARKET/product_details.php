@@ -53,13 +53,23 @@ include('functions/common_function.php');
             </li>
 
 
-            <form class="d-flex" action="search_product.php" method="get">
+            <form class="d-flex" action="
+            _product.php" method="get">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
               <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
             </form>
         </div>
       </div>
     </nav>
+
+
+
+    <!-- calling cart function -->
+
+
+    <?php
+    cart();
+    ?>
 
     <!-- second child -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -88,6 +98,48 @@ include('functions/common_function.php');
 
         <!-- Products -->
         <div class="row">
+          <div class="col-md-4">
+
+
+
+            <!-- card -->
+            <div class='card'>
+              <img src='./images/Apple1.jpg' class='card-img-top' alt='$product_title'>
+              <div class='card-body'>
+                <h5 class='card-title'>$product_title</h5>
+                <p class='card-tex'>$product_description</p>
+                <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
+              </div>
+            </div>
+
+
+
+
+
+
+          </div>
+          <div class="col-md-8">
+
+            <!-- realted images -->
+            .<div class="row">
+              <div class="col-md-12">
+                <h4 class="text-center text-info mb-5">Realted products</h4>
+              </div>
+
+              <div class="col-md-6">
+                <img src='./images/Apple2.jpg' class='card-img-top' alt='$product_title'>
+              </div>
+
+
+
+              <div class="col-md-6">
+                <img src='./images/Apple3.jpg' class='card-img-top' alt='$product_title'>
+              </div>
+            </div>
+          </div>
+
+
 
           <!-- fetching products -->
           <?php
@@ -137,15 +189,16 @@ include('functions/common_function.php');
 
       </div>
     </div>
+
+
+
+
+    <!-- last child -->
+    <!-- include footer -->
+    <?php include("./includes/footer.php") ?>
   </div>
 
-
-
-  <!-- last child -->
-  <!-- include footer -->
-  <?php include("./includes/footer.php") ?>
-
-  <!-- boot strapt JS link -->
+  <!-- bootstrapt JS link -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
