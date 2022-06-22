@@ -27,6 +27,7 @@ function getproducts()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
+                          <p class='card-tex'>Price:$product_price/-</p>
                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>   
                       </div>
@@ -67,6 +68,7 @@ function get_unique_categories()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
+                          <p class='card-tex'>Price:$product_price/-</p>
                              <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
@@ -106,6 +108,7 @@ function get_unique_brands()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
+                          <p class='card-tex'>Price:$product_price/-</p>
                              <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
@@ -159,6 +162,7 @@ function get_all_products()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
+                          <p class='card-tex'>Price:$product_price/-</p>
                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
                         </div>
@@ -256,6 +260,7 @@ function view_datails()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-tex'>$product_description</p>
+                          <p class='card-tex'>Price:$product_price/-</p>
                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                             <a href='index.php' class='btn btn-secondary'>Go home</a>
                       </div>
