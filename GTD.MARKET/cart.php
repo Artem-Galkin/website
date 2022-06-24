@@ -92,6 +92,9 @@ include('functions/common_function.php');
     <!-- fourth child-table -->
     <div class="container">
       <div class="row">
+        <form action="" method="post">
+
+        </form>
         <table class="table table-bordered text-center">
           <thead>
             <tr>
@@ -129,11 +132,22 @@ include('functions/common_function.php');
                 <tr>
                   <td><?php echo $product_title ?></td>
                   <td><img src="./admin_area/product_images/<?php echo $product_image1 ?>" alt="" class="cart_img"></td>
-                  <td><input type="text" name="" id="" class="form-input w-50"></td>
+                  <td><input type="text" name="qty" id="" class="form-input w-50"></td>
+                  <?php
+                  $get_ip_add = getIPAddress();
+                  if (isset($_POST['update_cart'])) {
+                    $quantities = $_POST['qty'];
+                    $update_cart = "update `cart_details` set quantity= $quantities where ip_address='$get_ip_add'";
+                    $result_products_quantity = mysqli_query($con, $update_cart); //  перемножает количество со стоимостью  Part -31 (9:30)
+                    $total_price = $total_price * $quantities;
+                  }
+                  ?>
                   <td><?php echo $price_table ?>/-</td>
                   <td><input type="checkbox"></td>
                   <td>
-                    <button class="bg-info px-3 py-2 border-0 mx-3">Update</button><button class="bg-info px-3 py-2 border-0 mx-3">Remove</button>
+                    <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Update</button> -->
+                    <input type="submit" value="Ubdate Cart">
+                    <button class="bg-info px-3 py-2 border-0 mx-3" name="update_cart">Remove</button>
                   </td>
                 </tr>
             <?php
@@ -154,7 +168,7 @@ include('functions/common_function.php');
       </div>
     </div>
 
-
+    </form>
   </div>
   </div>
   </div>
