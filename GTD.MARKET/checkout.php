@@ -12,7 +12,7 @@ include('functions/common_function.php');
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecommerce Website using PHP and MySQL</title>
+  <title>Ecommerce Website-Checkout</title>
 
 
   <!-- bootstrapt CSS link -->
@@ -45,12 +45,7 @@ include('functions/common_function.php');
             <li class="nav-item">
               <a class="nav-link" href="#">Register</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.php">Contact<i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Total Price:<?php total_cart_price(); ?>/-</a>
-            </li>
+
           </ul>
 
           <form class="d-flex" action="search_product.php" method="get">
@@ -61,12 +56,6 @@ include('functions/common_function.php');
       </div>
     </nav>
 
-    <!-- calling cart function -->
-
-
-    <?php
-    cart();
-    ?>
 
 
     <!-- second child -->
@@ -92,57 +81,19 @@ include('functions/common_function.php');
     <!-- fourth child -->
 
     <div class="row px-1">
-      <div class="col-md-10">
+      <div class="col-md-12">
 
         <!-- Products -->
         <div class="row">
-          <!-- fetching products -->
           <?php
-          //calling function 
-          getproducts();
-          get_unique_categories();
-          get_unique_brands();
-          // $ip = getIPAddress();
-          // echo 'User Real IP Address - ' . $ip;
-
+          if (!isset($_SESSION['username'])) {
+            include('users_area/user_login.php');
+          } else {
+            include('payment.php');
+          }
           ?>
-          <!-- row end -->
+          <!-- col end -->
         </div>
-        <!-- col end -->
-      </div>
-
-
-
-
-      <div class="col-md-2 bg-secondary p-0">
-        <!-- brands to be displayed -->
-        <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item bg-info">
-            <a href="#" class="nav-link text-light">
-              <h4>Delivery Brands</h4>
-            </a>
-          </li>
-
-          <?php
-          getbrands();
-          ?>
-        </ul>
-
-
-        <!-- categories to be displayed -->
-
-
-        <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item bg-info">
-            <a href="#" class="nav-link text-light">
-              <h4>Categories</h4>
-            </a>
-          </li>
-
-          <?php
-          getcategories();
-          ?>
-        </ul>
 
 
       </div>
