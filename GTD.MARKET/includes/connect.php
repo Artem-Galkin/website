@@ -3,5 +3,6 @@
 <?php
 $con = mysqli_connect('localhost', 'root', '', 'mystore');
 if (!$con) {  // "!" - убрать перед проверкой/
-  echo "connection successful";
-};
+  die(mysqli_error($con));
+}
+?>

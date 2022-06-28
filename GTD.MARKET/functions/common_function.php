@@ -1,6 +1,6 @@
 <!-- including connect file -->
 <?php
-include('./includes/connect.php');
+// include('./includes/connect.php');
 
 
 // getting products                    решить задачу с воспроизведением 3 фото (Part-22, 9:00-10:00)
