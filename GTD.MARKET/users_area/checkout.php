@@ -87,7 +87,7 @@ include('../includes/connect.php');
         <div class="row">
           <?php
           if (!isset($_SESSION['username'])) {
-            include('user_login.php');
+            include('../payment.php');
           } else {
             include('payment.php');
           }
