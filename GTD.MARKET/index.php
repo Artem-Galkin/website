@@ -4,7 +4,6 @@ include('includes/connect.php');
 include('functions/common_function.php');
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,7 @@ include('functions/common_function.php');
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecommerce Website using PHP and MySQL</title>
+  <title>Ecommerce Website using PHP and MySQL.</title>
 
 
   <!-- bootstrapt CSS link -->
@@ -21,6 +20,13 @@ include('functions/common_function.php');
   <!-- font awesome link-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+
 </head>
 
 
@@ -43,14 +49,21 @@ include('functions/common_function.php');
               <a class="nav-link" href="display_all.php">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <a class="nav-link" href="./users_area/user_registration.php">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cart.php">Contact<i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
+                </i><sup><?php cart_item(); ?></sup></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Total Price:<?php total_cart_price(); ?>/-</a>
             </li>
+
+
+
           </ul>
 
           <form class="d-flex" action="search_product.php" method="get">

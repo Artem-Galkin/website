@@ -21,7 +21,6 @@ include('../functions/common_function.php');
     }
   </style>
 
-</head>
 
 
 <body>
@@ -58,6 +57,8 @@ include('../functions/common_function.php');
   </div>
 </body>
 
+</head>
+
 </html>
 
 <?php
@@ -66,7 +67,7 @@ if (isset($_POST['user_login'])) {
   $user_password = $_POST['user_password'];
   $select_query = "Selec * from `user_table` where username=' $user_username'";
   $result = mysqli_query($con, $select_query);
-  $row_count = mysqli_num_rows($result);
+  $row_count = mysqli_num_rows($result);        // ошибка 70, 71, 76  "Invalid Credentaials" при вводе логина и пароля. Видео 43, 44 серия.
   $row_data = mysqli_fetch_assoc($result);
   $user_ip = getIPAddress();
 

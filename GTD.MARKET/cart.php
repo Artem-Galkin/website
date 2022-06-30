@@ -46,11 +46,16 @@ include('functions/common_function.php');
               <a class="nav-link" href="display_all.php">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <a class="nav-link" href="./users_area/user_registration.php">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cart.php">Contact<i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -65,10 +70,11 @@ include('functions/common_function.php');
           <a class="nav-link" href="#">Welcome Guest</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="./users_area/user_login.php">Login</a>
         </li>
       </ul>
     </nav>
+
     <!-- fhird child -->
     <div class="bg-light">
       <h3 class="text-center">Hidden Store</h3>
@@ -117,7 +123,7 @@ include('functions/common_function.php');
                   <tr>
                     <td><?php echo $product_title ?></td>
                     <td><img src="./admin_area/product_images/<?php echo $product_image1 ?>" alt="" class="cart_img"></td>
-                    <td><input type="text" name="qty" id="" class="form-input w-50"></td>
+                    <td><input type="text" name="qty" class="form-input w-50"></td>
                     <?php
                     $get_ip_add = getIPAddress();
                     if (isset($_POST['update_cart'])) {
@@ -128,13 +134,12 @@ include('functions/common_function.php');
                     }
                     ?>
                     <td><?php echo $price_table ?>/-</td>
-                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></td>
                     <td>
                       <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Update</button>-->
                       <input type="submit" value="Ubdate Cart" class="bg-info px-3 py-2 border-0 mx-3" name="update_cart">
                       <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Remove</button>-->
-                      <input type="submit" value="Remove Cart" class="bg-info px-3 py-2 border-0 mx-3" name="remove Cart">
-
+                      <input type="submit" value="Remove Cart" class="bg-info px-3 py-2 border-0 mx-3" name="remove_cart">
                     </td>
                   </tr>
             <?php
@@ -152,7 +157,7 @@ include('functions/common_function.php');
           </table>
 
           <!-- subtotal -->
-          <div class="d-flex mb-3">
+          <div class="d-flex mb-5">
             <?php
 
             $get_ip_add = getIPAddress();
