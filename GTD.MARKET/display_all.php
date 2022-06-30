@@ -2,7 +2,7 @@
 <?php
 include('includes/connect.php');
 include('functions/common_function.php');
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -57,10 +57,11 @@ include('functions/common_function.php');
             <li class="nav-item">
               <a class="nav-link" href="#">Total Price:<?php total_cart_price(); ?>/-</a>
             </li>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
         </div>
       </div>
     </nav>
@@ -71,18 +72,25 @@ include('functions/common_function.php');
         <li class="nav-item">
           <a class="nav-link" href="#">Welcome Guest</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./users_area/user_login.php">Login</a>
-        </li>
+        <?php
+        if (!isset($_SESSION['username'])) {
+          echo "<li class='nav-item'>
+  <a class='nav-link' href='.users_area/user_login.php'>Login</a></li>";
+        } else {
+          echo "<li class='nav-item'>
+  <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+  </li>";
+        }
+        ?>
       </ul>
     </nav>
 
 
-    <!-- fhird child -->
+    <!-- Third child -->
 
     <div class="bg-light">
       <h3 class="text-center">Hidden Store</h3>
-      <p class="text-center">Communication is at the heart of e-commerce and community</p>
+      <p class="text-center">Communications is at the heart of e-commerce and community</p>
     </div>
 
     <!-- fourth child -->

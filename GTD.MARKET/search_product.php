@@ -2,7 +2,7 @@
 <?php
 include('includes/connect.php');
 include('functions/common_function.php');
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ include('functions/common_function.php');
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecommerce Website using PHP and MySQL</title>
+  <title>Ecommerce Website using PHP and MySQL.</title>
 
 
   <!-- bootstrapt CSS link -->
@@ -20,6 +20,7 @@ include('functions/common_function.php');
 
   <!-- font awesome link-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css file -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -43,20 +44,22 @@ include('functions/common_function.php');
               <a class="nav-link" href="display_all.php">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <Register class="nav-link" href="./users_area/user_registration.php">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact<i class="fa-solid fa-cart-shopping"></i> <sup>1</sup> </a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Total Price:100/-</a>
+              <a class="nav-link" href="#"> <i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
             </li>
-
-
-            <form class="d-flex" action="" method="get">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
-              <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
-            </form>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Total Price:<?php total_cart_price(); ?>/-</a>
+            </li>
+          </ul>
+          <form class="d-flex" action="" method="get">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+            <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
+          </form>
         </div>
       </div>
     </nav>
@@ -70,27 +73,31 @@ include('functions/common_function.php');
     ?>
 
 
-
-
-
     <!-- second child -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link" href="#">Welcome Guest</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./users_area/user_login.php">Login</a>
-        </li>
+        <?php
+        if (!isset($_SESSION['username'])) {
+          echo "<li class='nav-item'>
+  <a class='nav-link' href='.users_area/user_login.php'>Login</a></li>";
+        } else {
+          echo "<li class='nav-item'>
+  <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+  </li>";
+        }
+        ?>
       </ul>
     </nav>
 
 
-    <!-- fhird child -->
+    <!-- third child -->
 
     <div class="bg-light">
       <h3 class="text-center">Hidden Store</h3>
-      <p class="text-center">Communication is at the heart of e-commerce and community</p>
+      <p class="text-center">Communications is at the heart of e-commerce and community</p>
     </div>
 
     <!-- fourth child -->

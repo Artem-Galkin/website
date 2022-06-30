@@ -1,5 +1,6 @@
 <?php include('../includes/connect.php');
 include('../functions/common_function.php');
+@session_start();
 ?>
 
 
@@ -70,6 +71,7 @@ if (isset($_POST['user_login'])) {
   $row_count = mysqli_num_rows($result);        // ошибка 70, 71, 76  "Invalid Credentaials" при вводе логина и пароля. Видео 43, 44 серия.
   $row_data = mysqli_fetch_assoc($result);
   $user_ip = getIPAddress();
+  session_start();
 
 
   // cart item

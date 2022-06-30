@@ -2,7 +2,7 @@
 <?php
 include('includes/connect.php');
 include('functions/common_function.php');
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +19,12 @@ include('functions/common_function.php');
 
   <!-- font awesome link-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+
+
+
+  <!-- css file -->
+
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -88,9 +94,17 @@ include('functions/common_function.php');
         <li class="nav-item">
           <a class="nav-link" href="#">Welcome Guest</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./users_area/user_login.php">Login</a>
-        </li>
+        <?php
+        if (!isset($_SESSION['username'])) {
+          echo "<li class='nav-item'>
+  <a class='nav-link' href='.users_area/user_login.php'>Login</a></li>";
+        } else {
+          echo "<li class='nav-item'>
+  <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+  </li>";
+        }
+
+        ?>
       </ul>
     </nav>
 
@@ -99,7 +113,7 @@ include('functions/common_function.php');
 
     <div class="bg-light">
       <h3 class="text-center">Hidden Store</h3>
-      <p class="text-center">Communication is at the heart of e-commerce and community</p>
+      <p class="text-center">Communications is at the heart of e-commerce and community</p>
     </div>
 
     <!-- fourth child -->
@@ -117,7 +131,6 @@ include('functions/common_function.php');
           get_unique_brands();
           // $ip = getIPAddress();
           // echo 'User Real IP Address - ' . $ip;
-
           ?>
           <!-- row end -->
         </div>
@@ -156,7 +169,6 @@ include('functions/common_function.php');
           getcategories();
           ?>
         </ul>
-
 
       </div>
     </div>
