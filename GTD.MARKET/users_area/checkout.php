@@ -95,7 +95,7 @@ session_start();
 
     <div class="bg-light">
       <h3 class="text-center">Hidden Store</h3>
-      <p class="text-center">Communication is at the heart of e-commerce and community</p>
+      <p class="text-center">Communications is at the heart of e-commerce and community</p>
     </div>
 
     <!-- fourth child -->
