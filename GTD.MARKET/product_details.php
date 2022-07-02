@@ -12,7 +12,7 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecommerce Website using PHP and MySQL</title>
+  <title>Ecommerce Website using PHP and MySQL.</title>
 
 
   <!-- bootstrapt CSS link -->
@@ -79,13 +79,18 @@ session_start();
     <!-- second child -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Welcome Guest</a>
-        </li>
         <?php
         if (!isset($_SESSION['username'])) {
+          echo " <li class='nav-item'>
+          <a class='nav-link' href='#'>Welcome Guest</a></li>";
+        } else {
           echo "<li class='nav-item'>
-  <a class='nav-link' href='.users_area/user_login.php'>Login</a></li>";
+  <a class='nav-link' href='#'>Welcome " . $_SESSION['username'] . "</a>
+  </li>";
+        }
+        if (!isset($_SESSION['username'])) {
+          echo "<li class='nav-item'>
+  <a class='nav-link' href='./users_area/user_login.php'>Login</a></li>";
         } else {
           echo "<li class='nav-item'>
   <a class='nav-link' href='./users_area/logout.php'>Logout</a>
@@ -94,7 +99,7 @@ session_start();
         ?>
       </ul>
     </nav>
-
+    <!-- Здесь должна быть запись из 47 части 3:33-->
 
     <!-- fhird child -->
 
