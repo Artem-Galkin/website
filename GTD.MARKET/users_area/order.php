@@ -20,7 +20,7 @@ while ($row_price = mysqli_fetch_array($result_cart_price)) {
   $select_product = "Select * from `products` where product_id=$product_id";
   $run_price = mysqli_query($con, $select_product);
   while ($row_product_price = mysqli_fetch_array($run_price)) {
-    $product_price = array($row_product_price['$product_price']);
+    $product_price = array($row_product_price['product_price']);
     $product_values = array_sum($product_price);
     $total_price += $product_values;
   }
@@ -40,8 +40,7 @@ if ($quantity == 0) {
   $quantity = $quantity;
   $subtotal = $total_price * $quantity;
 }
-
-$insert_orders = "insert into `user_orders` (user_id,amount_due, invoice_number,total_products,order_date,order_status) values($user_id,$subtotal,$invoice_number,$count_products,NOW(),'$status' )";
+$insert_orders = "insert into `user_orders` (user_id,amount_due, invoice_number,total_products,order_date,order_status) values($user_id,$subtotal,$invoice_number,$count_products,NOW(),'$status')";
 $result_query = mysqli_query($con, $insert_orders);
 if ($result_query) {
   echo "<script>alert('Orders are submitted successfully')</script>";
@@ -50,7 +49,7 @@ if ($result_query) {
 
 
 // orders pending
-$insert_pending_orders = "insert into `orders_pending` (user_id, invoice_number,product_id,quantity,order_status) values($user_id,$invoice_number,$product_id,$quantity,'$status' )";
+$insert_pending_orders = "insert into `orders_pending` (user_id,invoice_number,product_id,quantity,order_status) values($user_id,$invoice_number,$product_id,$quantity, '$status')";
 $result_pending_orders = mysqli_query($con, $insert_pending_orders);
 
 
