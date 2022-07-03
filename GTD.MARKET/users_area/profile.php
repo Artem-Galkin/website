@@ -146,7 +146,7 @@ session_start();
         $user_image = $row_image['user_image'];
         echo "        <li class='nav-item'>
           <img src='./user_images/$user_image' class='profile_img my-4' alt=''>
-        </li>";
+        </li>"; // добавление фото на страницу аккаунта Part 54-55 
         ?>
 
 
@@ -182,7 +182,9 @@ session_start();
           </a>
         </li>
 
-
+        <div class="col-md-10">
+          <?php get_user_order_details(); ?>
+        </div>
 
 
 
