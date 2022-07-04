@@ -236,7 +236,7 @@ function search_product()
 
 
 // view details function 
-function view_datails()
+function view_details()
 {
   global $con;
   // condition to check isset or not 
@@ -262,10 +262,9 @@ function view_datails()
                     class='card-img-top' alt='$product_title'>
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
-                          <p class='card-text'>$product_description</p>
-                          <p class='card-text'>Price:$product_price/-</p>
-                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                            <a href='index.php' class='btn btn-secondary'>Go home</a>
+                          <p class='card-text'>$product_description</p> 
+                          <a href='#' class='btn btn-info'>Add to cart</a>
+                          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
                       </div>
                   </div>
                 </div>
@@ -274,8 +273,7 @@ function view_datails()
               <div class='col-md-8'>
                       <div class='row'>
                         <div class='col-md-12'>
-                          </h4 class='text-center text-info mb-5'>Relatedproducts
-                           </h4>
+                          <h4 class='text-center text-info mb-5'>Related products</h4>
                         </div>
 
                         <div class='col-md-6'>
@@ -284,16 +282,11 @@ function view_datails()
                         </div>
 
                         <div class='col-md-6'>
-                            <img src='./admin_area/product_images/$product_image3' 
+                            <img src='./admin_area/product_images/$product_image3'
                             class='card-img-top' alt='$product_title'>
                         </div>
-                         
                       </div>
-              </div>
-
-
-
-                    ";
+              </div>";
         }
       }
     }
