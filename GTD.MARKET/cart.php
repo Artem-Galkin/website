@@ -95,7 +95,7 @@ session_start();
     <!-- fhird child -->
     <div class="bg-light">
       <h3 class="text-center">Hidden Store</h3>
-      <p class="text-center">Communication is at the heart of e-commerce and community</p>
+      <p class="text-center">Communications is at the heart of e-commerce and community</p>
     </div>
     <!-- fourth child-table -->
     <div class="container">
@@ -112,17 +112,17 @@ session_start();
             $result = mysqli_query($con, $cart_query);
             $result_count = mysqli_num_rows($result);
             if ($result_count > 0) {
-              //   echo "          <thead>
-              //   <tr>
-              //     <th>Product Title</th>
-              //     <th>Product Image</th>
-              //     <th>Quantity</th>
-              //     <th>Total Price</th>
-              //     <th>Remove</th>
-              //     <th colspan='2'>Operations</th>
-              //   </tr>
-              // </thead>
-              // <tbody>";
+              echo "          <thead>
+                <tr>
+                  <th>Product Title</th>
+                  <th>Product Image</th>
+                  <th>Quantity</th>
+                  <th>Total Price</th>
+                  <th>Remove</th>
+                  <th colspan='2'>Operations</th>
+                </tr>
+              </thead>
+              <tbody>";
               while ($row = mysqli_fetch_array($result)) {
                 $product_id = $row['product_id'];
                 $select_products = "Select * from `products` where product_id='$product_id'";
@@ -135,40 +135,29 @@ session_start();
                   $product_values = array_sum($product_price);  //[500]
                   $total_price += $product_values;  //[500]
             ?>
-                  <thead>
-                    <tr>
-                      <th>Product Title</th>
-                      <th>Product Image</th>
-                      <th>Quantity</th>
-                      <th>Total Price</th>
-                      <th>Remove</th>
-                      <th colspan='2'>Operations</th>
-                    </tr>
-                  </thead>
 
-                  <tbody>
-                    <tr>
-                      <td><?php echo $product_title ?></td>
-                      <td><img src="./admin_area/product_images/<?php echo $product_image1 ?>" alt="" class="cart_img"></td>
-                      <td><input type="text" name="qty" class="form-input w-50"></td>
-                      <?php
-                      $get_ip_add = getIPAddress();
-                      if (isset($_POST['update_cart'])) {
-                        $quantities = $_POST['qty'];
-                        $update_cart = "update `cart_details` set quantity= $quantities where ip_address=$get_ip_add";
-                        $result_products_quantity = mysqli_query($con, $update_cart); //  перемножает количество со стоимостью  Part -31 (9:30)
-                        $total_price = $total_price * $quantities;
-                      }
-                      ?>
-                      <td><?php echo $price_table ?>/-</td>
-                      <td><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></td>
-                      <td>
-                        <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Update</button>-->
-                        <input type="submit" value="Ubdate Cart" class="bg-info px-3 py-2 border-0 mx-3" name="update_cart">
-                        <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Remove</button>-->
-                        <input type="submit" value="Remove Cart" class="bg-info px-3 py-2 border-0 mx-3" name="remove_cart">
-                      </td>
-                    </tr>
+                  <tr>
+                    <td><?php echo $product_title ?></td>
+                    <td><img src="./admin_area/product_images/<?php echo $product_image1 ?>" alt="" class="cart_img"></td>
+                    <td><input type="text" name="qty" class="form-input w-50"></td>
+                    <?php
+                    $get_ip_add = getIPAddress();
+                    if (isset($_POST['update_cart'])) {
+                      $quantities = $_POST['qty'];
+                      $update_cart = "update `cart_details` set quantity= $quantities where ip_address=$get_ip_add";
+                      $result_products_quantity = mysqli_query($con, $update_cart); //  перемножает количество со стоимостью  Part -31 (9:30)
+                      $total_price = $total_price * $quantities;
+                    }
+                    ?>
+                    <td><?php echo $price_table ?>/-</td>
+                    <td><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></td>
+                    <td>
+                      <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Update</button>-->
+                      <input type="submit" value="Ubdate Cart" class="bg-info px-3 py-2 border-0 mx-3" name="update_cart">
+                      <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Remove</button>-->
+                      <input type="submit" value="Remove Cart" class="bg-info px-3 py-2 border-0 mx-3" name="remove_cart">
+                    </td>
+                  </tr>
                   <tbody>
               <?php
                 }
@@ -176,9 +165,6 @@ session_start();
             } else {
               echo "<h2 class='text-center text-danger'>Cart is empty</h2>";
             }
-
-
-
 
               ?>
                   </tbody>
@@ -193,13 +179,16 @@ session_start();
             $result_count = mysqli_num_rows($result);
             if ($result_count > 0) {
               echo " <h4 class='px-3'>Subtotal:<strong class='text-info'>$total_price/-</strong></h4>
-              <input type='submit' value=Continue Shopping class='bg-info px-3 py-2 border-0 mx-3' name=' continue_shopping'>
+              <input type='submit' value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3' name=' continue_shopping'>
               <a href=''><button class='bg-secondary px-3 py-2 border-0 text-light'>Checout</button></a>";
             } else {
-              echo "             <input type='submit' value=Continue Shopping class='bg-info px-3 py-2 border-0 mx-3' name='continue_shopping'>";
+              echo "             <input type='submit' value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3' name='continue_shopping'>";
+            }
+            if (isset($_POST['continue_shopping'])) {
+              echo "<script>window.open('index.php','_self')</script>";
             }
             ?>
-            if (isset($_POST['continue_shopping']))
+
 
 
           </div>
@@ -217,7 +206,7 @@ session_start();
           $delete_query = "Delete from `cart_details` where product_id=$remove_id";
           $run_delete = mysqli_query($con, $delete_query);
           if ($run_delete) {
-            echo "<script>window.open('cart.php','_self')</script>";
+            echo "<script>window.open('cart.php','_self')</>";
           }
         }
       }
