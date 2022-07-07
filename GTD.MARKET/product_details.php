@@ -109,14 +109,19 @@ session_start();
     </div>
 
     <!-- fourth child -->
+
     <div class="row px-1">
       <div class="col-md-10">
+
         <!-- Products -->
         <div class="row">
           <div class="col-md-4">
+
+
+
             <!-- card -->
             <div class='card'>
-              <img src='./images/Apple1.jpg' class='card-img-top' alt='$product_title'>
+              <img src='./admin_area/product_images/Apple1.jpg' class='card-img-top' alt='$product_title'>
               <div class='card-body'>
                 <h5 class='card-title'>$product_title</h5>
                 <p class='card-tex'>$product_description</p>
@@ -124,17 +129,19 @@ session_start();
                 <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>
               </div>
             </div>
+
+
+
+
+
+
           </div>
-
-
-
-
-
           <div class="col-md-8">
+
             <!-- realted images -->
             .<div class="row">
               <div class="col-md-12">
-                <h4 class="text-center text-info mb-5">Related products</h4>
+                <h4 class="text-center text-info mb-5">Realted products</h4>
               </div>
 
               <div class="col-md-6">
@@ -142,27 +149,26 @@ session_start();
               </div>
 
 
+
               <div class="col-md-6">
                 <img src='./images/Apple3.jpg' class='card-img-top' alt='$product_title'>
               </div>
             </div>
-
           </div>
+
+
+
+          <!-- fetching products -->
+          <?php
+          //calling function 
+          view_datails();
+          get_unique_categories();
+          get_unique_brands();
+          ?>
+          <!-- row end -->
         </div>
-
-
-
-        <!-- fetching products -->
-        <?php
-        //calling function 
-
-        get_unique_categories();
-        get_unique_brands();
-        ?>
-        <!-- row end -->
+        <!-- col end -->
       </div>
-      <!-- col end -->
-
 
 
 
@@ -197,16 +203,16 @@ session_start();
           ?>
         </ul>
 
+
       </div>
     </div>
-  </div>
 
 
 
 
-  <!-- last child -->
-  <!-- include footer -->
-  <?php include("./includes/footer.php") ?>
+    <!-- last child -->
+    <!-- include footer -->
+    <?php include("./includes/footer.php") ?>
   </div>
 
   <!-- bootstrapt JS link -->

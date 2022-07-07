@@ -27,9 +27,9 @@ function getproducts()
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                           <p class='card-text'>$product_description</p>
-                          <p class='card-text'>Price: $product_price/-</p>
+                          <p class='card-text'>Price:$product_price/-</p>
                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>   
+                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Vie more</a>   
                       </div>
                  </div>
             </div>";
@@ -236,7 +236,7 @@ function search_product()
 
 
 // view details function 
-function view_details()
+function view_datails()
 {
   global $con;
   // condition to check isset or not 
@@ -262,9 +262,10 @@ function view_details()
                     class='card-img-top' alt='$product_title'>
                       <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
-                          <p class='card-text'>$product_description</p> 
-                          <a href='#' class='btn btn-info'>Add to cart</a>
-                          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
+                          <p class='card-text'>$product_description</p>
+                          <p class='card-text'>Price:$product_price/-</p>
+                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                            <a href='index.php' class='btn btn-secondary'>Go home</a>
                       </div>
                   </div>
                 </div>
@@ -273,7 +274,8 @@ function view_details()
               <div class='col-md-8'>
                       <div class='row'>
                         <div class='col-md-12'>
-                          <h4 class='text-center text-info mb-5'>Related products</h4>
+                          </h4 class='text-center text-info mb-5'>Relatedproducts
+                           </h4>
                         </div>
 
                         <div class='col-md-6'>
@@ -282,11 +284,16 @@ function view_details()
                         </div>
 
                         <div class='col-md-6'>
-                            <img src='./admin_area/product_images/$product_image3'
+                            <img src='./admin_area/product_images/$product_image3' 
                             class='card-img-top' alt='$product_title'>
                         </div>
+                         
                       </div>
-              </div>";
+              </div>
+
+
+
+                    ";
         }
       }
     }
@@ -394,14 +401,14 @@ function get_user_order_details()
   $result_query = mysqli_query($con, $get_details);
   while ($row_query = mysqli_fetch_array($result_query)) {
     $user_id = $row_query['user_id'];
-    if (!isset($_Get['edit_account'])) {
-      if (!isset($_Get['my_orders'])) {
-        if (!isset($_Get['delete_account'])) {
+    if (!isset($_GET['edit_account'])) {
+      if (!isset($_GET['my_orders'])) {
+        if (!isset($_GET['delete_account'])) {
           $get_orders = "Select * from `user_orders` where user_id= $user_id and order_status='pending'";
           $result_orders_query = mysqli_query($con, $get_orders);
           $row_count = mysqli_num_rows($result_orders_query);
           if ($row_count > 0) {
-            echo "<h3 class='text-center text-success mt-5 mb-2'>You have <span class='text-danger'>$row_count</span>pending orders</h3><p class='text-center'>
+            echo "<h3 class='text-center text-success mt-5 mb-2'>You have <span class='text-danger'>$row_count</span> pending orders</h3>
             <p class='text-center'><a href='profile.php?my_orders' class='text-dark'>Order Details</a></p>";
           } else {
             echo "<h3 class='text-center text-success mt-5 mb-2'>You have zero pending orders</h3><p class='text-center'>

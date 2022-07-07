@@ -133,6 +133,8 @@ session_start();
           getproducts();
           get_unique_categories();
           get_unique_brands();
+          // $ip = getIPAddress();
+          // echo 'User Real IP Address - ' . $ip;
           ?>
           <!-- row end -->
         </div>
