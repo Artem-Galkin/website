@@ -196,6 +196,9 @@ session_start();
           if (isset($_GET['edit_account'])) {
             include('edit_account.php');
           }
+          if (isset($_GET['my_order'])) {
+            include('user_orders.php');
+          }
           ?>
         </div>
 
