@@ -1,0 +1,42 @@
+*{
+
+  box-sizing:border-box;
+}
+
+.body{
+  height: 100%
+  margin: 0;
+  padding: 0;
+  font-size 14px;
+}
+
+.grid__mainpage{
+  display: grid;
+  height: 100%;
+  grid-template-columns: auto minmax(max-content, 1110px) auto;
+  grid-template-areas: "toppanel toppanel toppanel" "left header right" "left body right" "footer footer footer";
+}
+
+.toppanel{
+  grid-area: toppanel;
+  background-color: #6b80ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

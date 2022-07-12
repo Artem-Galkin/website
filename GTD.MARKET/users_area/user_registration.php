@@ -21,6 +21,8 @@ include('../functions/common_function.php');
 </head>
 
 
+
+
 <body>
   <div class="container-fluid my-3">
     <h2 class="text-center">New User Registration</h2>
